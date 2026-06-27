@@ -276,14 +276,10 @@ Understanding these challenges is essential for designing robust machine learnin
 **[1]** IBM. *What is Predictive Maintenance?*  
 https://www.ibm.com/think/topics/predictive-maintenance
 
----
-
 <a id="ref-2"></a>
 
 **[2]** ManWinWin Software. *Predictive Maintenance: Complete Guide.*  
 https://www.manwinwin.com/predictive-maintenance/
-
----
 
 <a id="ref-3"></a>
 
