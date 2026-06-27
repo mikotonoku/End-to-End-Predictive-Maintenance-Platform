@@ -129,6 +129,3 @@ The project is designed to demonstrate practical Machine Learning Engineering sk
 * [18. Repository Structure](#18-repository-structure)
 * [19. References](#19-references)
 * [20. License](#20-license)
-
-
-## 📑 Table of Contents
