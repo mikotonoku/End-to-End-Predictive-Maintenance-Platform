@@ -129,3 +129,60 @@ The project is designed to demonstrate practical Machine Learning Engineering sk
 * [18. Repository Structure](#18-repository-structure)
 * [19. References](#19-references)
 * [20. License](#20-license)
+
+---
+
+# 1. Project Overview
+
+## 1.1 Motivation
+
+Modern industrial systems continuously generate large volumes of sensor data during operation. Traditionally, maintenance has been performed either after a component failure (reactive maintenance) or according to predefined service schedules (preventive maintenance). Although these approaches are widely used, they often result in unnecessary maintenance costs, unexpected equipment downtime, and reduced operational efficiency.
+
+Predictive Maintenance has emerged as a data-driven alternative that enables maintenance decisions to be based on the actual condition of equipment rather than fixed schedules. By continuously analyzing sensor measurements, machine learning models can estimate the health state of a system and predict when maintenance should be performed before a failure occurs.
+
+Remaining Useful Life (RUL) prediction is one of the key tasks within predictive maintenance. Accurate estimation of the remaining operational lifetime allows organizations to optimize maintenance schedules, reduce operational costs, improve equipment reliability, and increase safety in critical industries such as aviation, manufacturing, energy production, and transportation.
+
+This project was developed to demonstrate how a complete production-oriented Machine Learning system for RUL prediction can be designed, implemented, and deployed using modern software engineering and MLOps practices.
+
+---
+
+## 1.2 Problem Statement
+
+Many machine learning projects focus exclusively on model development and evaluation while overlooking the engineering components required for deploying models into real-world environments.
+
+In practical industrial applications, prediction is only one stage of a much larger workflow. Incoming data must first be validated, preprocessed, transformed into appropriate features, passed through a trained model, and finally delivered to end users through a reliable inference service. In addition, prediction requests, execution times, and potential errors should be logged for monitoring and future analysis.
+
+The objective of this project is to bridge the gap between machine learning research and production deployment by implementing a complete end-to-end prediction platform capable of automatically processing aircraft engine sensor data and estimating the Remaining Useful Life of each engine.
+
+---
+
+## 1.3 Project Goals
+
+The main objectives of this project are:
+
+* Develop a complete end-to-end Machine Learning pipeline for Remaining Useful Life prediction.
+* Implement automated validation of incoming sensor data.
+* Perform preprocessing and feature engineering before model inference.
+* Train and evaluate a regression model using the NASA CMAPSS dataset.
+* Build a REST API using FastAPI for serving predictions.
+* Containerize the application using Docker.
+* Implement prediction logging and error handling.
+* Organize the project following software engineering best practices.
+* Produce comprehensive technical documentation describing both theoretical concepts and implementation details.
+
+---
+
+## 1.4 Key Features
+
+The project includes the following major components:
+
+* End-to-end Machine Learning pipeline.
+* Remaining Useful Life prediction for aircraft engines.
+* Automated data validation.
+* Data preprocessing and feature engineering.
+* Machine Learning model inference.
+* REST API developed with FastAPI.
+* Docker-based deployment.
+* Prediction logging and monitoring.
+* Modular and scalable project architecture.
+* Reproducible experiments and technical documentation.
