@@ -269,6 +269,103 @@ Understanding these challenges is essential for designing robust machine learnin
 
 ---
 
+# 3. Remaining Useful Life (RUL)
+
+Remaining Useful Life (RUL) refers to the estimated amount of time or number of operating cycles that a system or component can continue functioning before it reaches the end of its useful life or experiences failure. RUL estimation is one of the fundamental tasks of predictive maintenance because it enables maintenance activities to be scheduled according to the actual health condition of equipment rather than predefined maintenance intervals [[4]](#ref-4) [[5]](#ref-5).
+
+Unlike fault detection, which determines whether a failure has already occurred, RUL prediction estimates how much useful operating life remains before the failure is expected to happen. This information allows organizations to optimize maintenance planning, minimize unexpected downtime, reduce maintenance costs, and improve equipment reliability [[4]](#ref-4) [[6]](#ref-6).
+
+Modern RUL prediction systems rely on continuous streams of sensor measurements collected during equipment operation. Machine learning algorithms analyze historical degradation patterns and estimate future system degradation, producing a prediction of the remaining operational lifetime [[5]](#ref-5) [[7]](#ref-7).
+
+---
+
+## 3.1 Definition of RUL
+
+Remaining Useful Life represents the interval between the current operating condition of a system and the point at which the system can no longer perform its intended function according to predefined performance criteria [[4]](#ref-4).
+
+Depending on the application, RUL may be expressed as:
+
+- remaining operating cycles;
+- remaining operating hours;
+- remaining mileage;
+- remaining production time.
+
+For aircraft engines, including the NASA CMAPSS dataset used in this project, RUL is measured as the number of remaining operational cycles before engine failure [[7]](#ref-7).
+
+Accurate estimation of RUL enables maintenance engineers to replace or repair components before catastrophic failures occur while maximizing the utilization of expensive industrial assets [[5]](#ref-5).
+
+---
+
+## 3.2 RUL Prediction Problem
+
+From a machine learning perspective, Remaining Useful Life prediction is formulated as a **supervised regression problem**.
+
+Each observation consists of multiple sensor measurements describing the current operating state of the equipment:
+
+```text
+x = [sensor₁, sensor₂, ..., sensorₙ]
+````
+
+The learning objective is to estimate a continuous target variable:
+
+```text
+ŷ = Remaining Useful Life
+```
+
+Unlike classification problems that predict discrete categories such as *healthy* or *faulty*, regression models produce continuous numerical predictions representing the expected remaining lifetime of the equipment [[4]](#ref-4).
+
+Several challenges make RUL prediction particularly difficult:
+
+* equipment degradation is typically nonlinear;
+* operating conditions may vary over time;
+* sensor measurements often contain noise;
+* failures occur relatively rarely, limiting the amount of labeled degradation data;
+* different assets may degrade at different rates despite operating under similar conditions [[4]](#ref-4) [[5]](#ref-5).
+
+To address these challenges, modern RUL prediction systems employ feature engineering, data preprocessing, and advanced machine learning algorithms capable of learning complex degradation patterns from historical sensor data [[5]](#ref-5) [[7]](#ref-7).
+
+---
+
+## 3.3 Evaluation Metrics
+
+Since Remaining Useful Life prediction is a regression task, model performance is evaluated using regression metrics that quantify the difference between predicted and actual RUL values.
+
+The most commonly used evaluation metrics include:
+
+### Mean Absolute Error (MAE)
+
+MAE measures the average absolute difference between predicted and true RUL values.
+
+Lower MAE indicates more accurate predictions.
+
+---
+
+### Root Mean Squared Error (RMSE)
+
+RMSE calculates the square root of the average squared prediction error.
+
+Because larger errors receive greater penalties, RMSE is particularly useful when large prediction errors are undesirable.
+
+The NASA CMAPSS benchmark commonly reports RMSE as one of its primary evaluation metrics [[7]](#ref-7).
+
+---
+
+### Coefficient of Determination (R²)
+
+The coefficient of determination measures how well the predicted values explain the variance of the true RUL values.
+
+An R² value close to 1 indicates excellent predictive performance, while values closer to 0 indicate poor explanatory power.
+
+---
+
+### NASA Scoring Function
+
+In addition to traditional regression metrics, the NASA CMAPSS benchmark frequently employs a specialized scoring function that penalizes late predictions more heavily than early predictions because unexpected failures generally have more severe operational consequences [[4]](#ref-4) [[7]](#ref-7).
+
+Using multiple evaluation metrics provides a more comprehensive assessment of model performance since each metric captures different characteristics of prediction quality.
+
+---
+
 ## References
 
 <a id="ref-1"></a>
@@ -285,3 +382,27 @@ https://www.manwinwin.com/predictive-maintenance/
 
 **[3]** Neural Concept. *How AI is Used in Predictive Maintenance.*  
 https://www.neuralconcept.com/post/how-ai-is-used-in-predictive-maintenance
+
+<a id="ref-4"></a>
+
+**[4]** Elsheikh A., Yacout S., Ouali M.-S. *Bidirectional Handshaking Between Maintenance and Product Design for Remaining Useful Life Prediction.* Procedia CIRP, 2014.
+
+https://www.sciencedirect.com/science/article/pii/S2212827114001140
+
+<a id="ref-5"></a>
+
+**[5]** MathWorks. *Three Ways to Estimate Remaining Useful Life for Predictive Maintenance.*
+
+https://www.mathworks.com/company/technical-articles/three-ways-to-estimate-remaining-useful-life-for-predictive-maintenance.html
+
+<a id="ref-6"></a>
+
+**[6]** Advanced Technology Services. *What Is Remaining Useful Life (RUL)?*
+
+https://www.advancedtech.com/blog/what-is-remaining-useful-life-rul/
+
+<a id="ref-7"></a>
+
+**[7]** Kaggle. *Remaining Useful Lifetime Prediction.*
+
+https://www.kaggle.com/code/sasakitetsuya/remaining-useful-lifetime-prediction
