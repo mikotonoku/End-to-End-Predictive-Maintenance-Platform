@@ -191,11 +191,11 @@ The project includes the following major components:
 
 # 2. Predictive Maintenance
 
-Predictive Maintenance (PdM) is a maintenance strategy that uses historical and real-time operational data to estimate the health condition of industrial equipment and predict potential failures before they occur. Instead of relying on fixed maintenance schedules or waiting until equipment breaks down, predictive maintenance continuously monitors system performance and determines the optimal time for maintenance interventions based on the actual condition of the asset [1][2].
+Predictive Maintenance (PdM) is a maintenance strategy that uses historical and real-time operational data to estimate the health condition of industrial equipment and predict potential failures before they occur. Instead of relying on fixed maintenance schedules or waiting until equipment breaks down, predictive maintenance continuously monitors system performance and determines the optimal time for maintenance interventions based on the actual condition of the asset [[1]](#ref-1) [[2]](#ref-2).
 
-Recent advances in machine learning, artificial intelligence, Industrial Internet of Things (IIoT), and cloud computing have significantly expanded the capabilities of predictive maintenance systems. Modern industrial environments continuously collect large amounts of sensor data, including temperature, pressure, vibration, rotational speed, fuel consumption, and other operational measurements. Machine learning models analyze these data streams to identify degradation patterns and estimate the Remaining Useful Life (RUL) of equipment, enabling organizations to schedule maintenance before critical failures occur [1][3].
+Recent advances in machine learning, artificial intelligence, Industrial Internet of Things (IIoT), and cloud computing have significantly expanded the capabilities of predictive maintenance systems. Modern industrial environments continuously collect large amounts of sensor data, including temperature, pressure, vibration, rotational speed, fuel consumption, and other operational measurements. Machine learning models analyze these data streams to identify degradation patterns and estimate the Remaining Useful Life (RUL) of equipment, enabling organizations to schedule maintenance before critical failures occur [[1]](#ref-1) [[3]](#ref-3).
 
-Predictive maintenance has become one of the most important applications of artificial intelligence in Industry 4.0, where reducing downtime, improving operational efficiency, and increasing equipment reliability are critical business objectives [1][3].
+Predictive maintenance has become one of the most important applications of artificial intelligence in Industry 4.0, where reducing downtime, improving operational efficiency, and increasing equipment reliability are critical business objectives [[1]](#ref-1) [[3]](#ref-3).
 
 ---
 
@@ -205,15 +205,15 @@ Industrial maintenance strategies can generally be divided into three major cate
 
 ### Reactive Maintenance
 
-Reactive maintenance, often referred to as **run-to-failure maintenance**, involves repairing or replacing equipment only after a failure has occurred. Although this strategy minimizes maintenance activities during normal operation, unexpected failures often lead to costly production downtime, emergency repairs, safety risks, and secondary damage to other system components [1][2].
+Reactive maintenance, often referred to as **run-to-failure maintenance**, involves repairing or replacing equipment only after a failure has occurred. Although this strategy minimizes maintenance activities during normal operation, unexpected failures often lead to costly production downtime, emergency repairs, safety risks, and secondary damage to other system components [[1]](#ref-1) [[2]](#ref-2).
 
 ### Preventive Maintenance
 
-Preventive maintenance performs inspections and component replacement at predefined time intervals regardless of the actual equipment condition. While this approach reduces the probability of catastrophic failures, it frequently results in unnecessary maintenance operations, increased labor costs, and premature replacement of components that still have significant remaining service life [1][2].
+Preventive maintenance performs inspections and component replacement at predefined time intervals regardless of the actual equipment condition. While this approach reduces the probability of catastrophic failures, it frequently results in unnecessary maintenance operations, increased labor costs, and premature replacement of components that still have significant remaining service life [[1]](#ref-1) [[2]](#ref-2).
 
 ### Predictive Maintenance
 
-Predictive maintenance combines continuous condition monitoring with data analytics and machine learning algorithms to estimate equipment health in real time. Maintenance actions are scheduled only when degradation indicators suggest that a failure is likely to occur in the near future. This approach minimizes unnecessary maintenance while substantially reducing unexpected failures and operational downtime [1][2][3].
+Predictive maintenance combines continuous condition monitoring with data analytics and machine learning algorithms to estimate equipment health in real time. Maintenance actions are scheduled only when degradation indicators suggest that a failure is likely to occur in the near future. This approach minimizes unnecessary maintenance while substantially reducing unexpected failures and operational downtime [[1]](#ref-1) [[2]](#ref-2) [[3]](#ref-3).
 
 ---
 
@@ -227,15 +227,15 @@ Aircraft engines contain hundreds of components operating under extreme temperat
 
 ### Manufacturing
 
-Manufacturing facilities employ predictive maintenance to monitor production machinery, conveyor systems, pumps, compressors, and robotic equipment. Early detection of abnormal operating conditions reduces production interruptions and improves overall equipment effectiveness (OEE) [1].
+Manufacturing facilities employ predictive maintenance to monitor production machinery, conveyor systems, pumps, compressors, and robotic equipment. Early detection of abnormal operating conditions reduces production interruptions and improves overall equipment effectiveness (OEE) [[1]](#ref-1).
 
 ### Energy Industry
 
-Power plants, wind turbines, gas turbines, and electrical generators continuously generate operational data that can be analyzed to detect degradation before failures occur. Predictive maintenance improves equipment availability while reducing maintenance costs [1][3].
+Power plants, wind turbines, gas turbines, and electrical generators continuously generate operational data that can be analyzed to detect degradation before failures occur. Predictive maintenance improves equipment availability while reducing maintenance costs [[1]](#ref-1) [[3]](#ref-3).
 
 ### Transportation
 
-Railway systems, heavy-duty vehicles, mining equipment, and marine engines benefit from predictive maintenance by reducing unexpected breakdowns and optimizing maintenance schedules according to equipment condition rather than fixed intervals [2].
+Railway systems, heavy-duty vehicles, mining equipment, and marine engines benefit from predictive maintenance by reducing unexpected breakdowns and optimizing maintenance schedules according to equipment condition rather than fixed intervals [[2]](#ref-2).
 
 ---
 
@@ -245,25 +245,25 @@ Railway systems, heavy-duty vehicles, mining equipment, and marine engines benef
 
 Predictive maintenance provides numerous advantages over traditional maintenance strategies:
 
-* reduced unplanned equipment downtime;
-* lower maintenance costs;
-* increased equipment reliability;
-* longer asset lifetime;
-* improved operational efficiency;
-* optimized spare parts management;
-* enhanced workplace safety;
-* data-driven maintenance planning [1][2][3].
+- reduced unplanned equipment downtime;
+- lower maintenance costs;
+- increased equipment reliability;
+- longer asset lifetime;
+- improved operational efficiency;
+- optimized spare parts management;
+- enhanced workplace safety;
+- data-driven maintenance planning [[1]](#ref-1) [[2]](#ref-2) [[3]](#ref-3).
 
 ### Challenges
 
 Despite its advantages, predictive maintenance also presents several technical challenges:
 
-* large volumes of sensor data require efficient storage and processing;
-* missing values and noisy sensor measurements may reduce model performance;
-* obtaining failure data is often difficult because equipment failures are relatively rare;
-* operating conditions may change over time, resulting in distribution shifts between training and production data;
-* industrial systems often require real-time prediction with low latency and high reliability;
-* successful deployment requires integration with existing production systems and maintenance workflows [1][3].
+- large volumes of sensor data require efficient storage and processing;
+- missing values and noisy sensor measurements may reduce model performance;
+- obtaining failure data is often difficult because equipment failures are relatively rare;
+- operating conditions may change over time, resulting in distribution shifts between training and production data;
+- industrial systems often require real-time prediction with low latency and high reliability;
+- successful deployment requires integration with existing production systems and maintenance workflows [[1]](#ref-1) [[3]](#ref-3).
 
 Understanding these challenges is essential for designing robust machine learning systems capable of operating reliably in real industrial environments.
 
@@ -271,8 +271,21 @@ Understanding these challenges is essential for designing robust machine learnin
 
 ## References
 
-[1] IBM, "What is Predictive Maintenance?", IBM Think, 2025. Available: https://www.ibm.com/think/topics/predictive-maintenance
+<a id="ref-1"></a>
 
-[2] ManWinWin Software, "Predictive Maintenance: Complete Guide". Available: https://www.manwinwin.com/predictive-maintenance/
+**[1]** IBM. *What is Predictive Maintenance?*  
+https://www.ibm.com/think/topics/predictive-maintenance
 
-[3] Neural Concept, "How AI is Used in Predictive Maintenance". Available: https://www.neuralconcept.com/post/how-ai-is-used-in-predictive-maintenance
+---
+
+<a id="ref-2"></a>
+
+**[2]** ManWinWin Software. *Predictive Maintenance: Complete Guide.*  
+https://www.manwinwin.com/predictive-maintenance/
+
+---
+
+<a id="ref-3"></a>
+
+**[3]** Neural Concept. *How AI is Used in Predictive Maintenance.*  
+https://www.neuralconcept.com/post/how-ai-is-used-in-predictive-maintenance
