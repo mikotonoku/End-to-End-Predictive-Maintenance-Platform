@@ -386,23 +386,19 @@ https://www.neuralconcept.com/post/how-ai-is-used-in-predictive-maintenance
 <a id="ref-4"></a>
 
 **[4]** Elsheikh A., Yacout S., Ouali M.-S. *Bidirectional Handshaking Between Maintenance and Product Design for Remaining Useful Life Prediction.* Procedia CIRP, 2014.
-
 https://www.sciencedirect.com/science/article/pii/S2212827114001140
 
 <a id="ref-5"></a>
 
 **[5]** MathWorks. *Three Ways to Estimate Remaining Useful Life for Predictive Maintenance.*
-
 https://www.mathworks.com/company/technical-articles/three-ways-to-estimate-remaining-useful-life-for-predictive-maintenance.html
 
 <a id="ref-6"></a>
 
 **[6]** Advanced Technology Services. *What Is Remaining Useful Life (RUL)?*
-
 https://www.advancedtech.com/blog/what-is-remaining-useful-life-rul/
 
 <a id="ref-7"></a>
 
 **[7]** Kaggle. *Remaining Useful Lifetime Prediction.*
-
 https://www.kaggle.com/code/sasakitetsuya/remaining-useful-lifetime-prediction
