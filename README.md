@@ -366,39 +366,112 @@ Using multiple evaluation metrics provides a more comprehensive assessment of mo
 
 ---
 
+# 4. NASA CMAPSS Dataset 
+
+The experiments presented in this project are based on the **Commercial Modular Aero-Propulsion System Simulation (CMAPSS)** dataset developed by the NASA Prognostics Center of Excellence (PCoE). The dataset is one of the most widely used public benchmarks for Remaining Useful Life (RUL) prediction and predictive maintenance research because it realistically simulates the degradation process of aircraft turbofan engines under various operating conditions [[8]](#ref-8) [[9]](#ref-9). 
+
+Unlike real industrial datasets, CMAPSS is generated using a high-fidelity engine simulator that models progressive engine degradation until system failure. This approach allows researchers to evaluate machine learning algorithms using fully labeled degradation trajectories while avoiding the confidentiality issues associated with real aircraft engine data [[8]](#ref-8). 
+
+The dataset has become the standard benchmark for evaluating machine learning methods for prognostics and health management (PHM), and it is extensively used in both academic research and industrial applications [[8]](#ref-8). 
+
+--- 
+
+## 4.1 Dataset Description 
+
+The CMAPSS dataset contains multivariate time-series data collected from multiple simulated aircraft turbofan engines operating under different environmental and operating conditions. 
+
+Each engine begins operation in a healthy state and gradually degrades over time until failure occurs. Every engine follows a unique degradation trajectory, meaning that engines fail after different numbers of operational cycles. 
+
+Each observation within the dataset represents a single operational cycle and contains: 
+
+- engine identifier;
+- operational cycle number;
+- three operational setting variables;
+- twenty-one sensor measurements.
+
+The dataset consists of four independent subsets (FD001–FD004), each representing different combinations of operating conditions and fault modes [[8]](#ref-8). 
+
+--- 
+
+## 4.2 Sensor Measurements 
+
+For every operational cycle, the simulator records measurements from multiple virtual sensors describing the current health state of the engine. 
+
+The available variables include: 
+
+- **Engine ID** — unique engine identifier;
+- **Cycle** — current operating cycle;
+- **Operational Settings (3 variables)** — environmental and operating conditions;
+- **Sensor Measurements (21 variables)** — simulated engine sensor readings.
+
+The sensor values represent measurements such as pressures, temperatures, rotational speeds, fuel flow characteristics, and other internal engine parameters. Although some sensors remain nearly constant throughout engine operation, others exhibit clear degradation trends that are highly informative for Remaining Useful Life prediction [[8]](#ref-8). 
+
+In practical machine learning applications, feature engineering and feature selection are commonly applied to identify the most informative sensor signals before model training. 
+
+--- 
+
+## 4.3 Target Variable 
+
+The prediction target is the **Remaining Useful Life (RUL)** of each engine. 
+
+For every observation, RUL represents the number of operating cycles remaining before engine failure. 
+
+During training, the complete degradation trajectory is available, making it possible to calculate the exact RUL value for every cycle. During testing, only partial engine trajectories are provided, and the objective is to predict the remaining lifetime at the last available observation of each engine [[8]](#ref-8). 
+
+This formulation makes the problem a supervised regression task where the input consists of multivariate sensor measurements and the output is a continuous numerical estimate of the remaining operating cycles. 
+
+--- 
+
+## 4.4 Train/Test Split 
+
+The CMAPSS dataset provides separate training and testing datasets. 
+
+The training dataset contains complete degradation trajectories for each engine, ending at the failure point. Consequently, the exact Remaining Useful Life can be computed for every operational cycle. 
+
+The testing dataset contains truncated engine trajectories that terminate before failure occurs. Instead of providing the remaining lifetime directly, NASA supplies a separate file containing the true RUL value for the final observation of every engine. This setup closely resembles real industrial scenarios where equipment has not yet failed and the objective is to estimate its remaining operational lifetime [[8]](#ref-8). 
+
+The dataset used in this project was downloaded from Kaggle, while the original dataset was developed and published by the NASA Prognostics Center of Excellence [[8]](#ref-8) [[10]](#ref-10). 
+
+---
+
 ## References
 
 <a id="ref-1"></a>
 
-**[1]** IBM. *What is Predictive Maintenance?*  
-https://www.ibm.com/think/topics/predictive-maintenance
+**[1]** IBM. *What is Predictive Maintenance?* Available: https://www.ibm.com/think/topics/predictive-maintenance
 
 <a id="ref-2"></a>
 
-**[2]** ManWinWin Software. *Predictive Maintenance: Complete Guide.*  
-https://www.manwinwin.com/predictive-maintenance/
+**[2]** ManWinWin Software. *Predictive Maintenance: Complete Guide.* Available: https://www.manwinwin.com/predictive-maintenance/
 
 <a id="ref-3"></a>
 
-**[3]** Neural Concept. *How AI is Used in Predictive Maintenance.*  
-https://www.neuralconcept.com/post/how-ai-is-used-in-predictive-maintenance
+**[3]** Neural Concept. *How AI is Used in Predictive Maintenance.* Available: https://www.neuralconcept.com/post/how-ai-is-used-in-predictive-maintenance
 
 <a id="ref-4"></a>
 
-**[4]** Elsheikh A., Yacout S., Ouali M.-S. *Bidirectional Handshaking Between Maintenance and Product Design for Remaining Useful Life Prediction.* Procedia CIRP, 2014.
-https://www.sciencedirect.com/science/article/pii/S2212827114001140
+**[4]** Elsheikh A., Yacout S., Ouali M.-S. *Bidirectional Handshaking Between Maintenance and Product Design for Remaining Useful Life Prediction.* Procedia CIRP, 2014. Available: https://www.sciencedirect.com/science/article/pii/S2212827114001140
 
 <a id="ref-5"></a>
 
-**[5]** MathWorks. *Three Ways to Estimate Remaining Useful Life for Predictive Maintenance.*
-https://www.mathworks.com/company/technical-articles/three-ways-to-estimate-remaining-useful-life-for-predictive-maintenance.html
+**[5]** MathWorks. *Three Ways to Estimate Remaining Useful Life for Predictive Maintenance.* Available: https://www.mathworks.com/company/technical-articles/three-ways-to-estimate-remaining-useful-life-for-predictive-maintenance.html
 
 <a id="ref-6"></a>
 
-**[6]** Advanced Technology Services. *What Is Remaining Useful Life (RUL)?*
-https://www.advancedtech.com/blog/what-is-remaining-useful-life-rul/
+**[6]** Advanced Technology Services. *What Is Remaining Useful Life (RUL)?* Available: https://www.advancedtech.com/blog/what-is-remaining-useful-life-rul/
 
 <a id="ref-7"></a>
 
-**[7]** Kaggle. *Remaining Useful Lifetime Prediction.*
-https://www.kaggle.com/code/sasakitetsuya/remaining-useful-lifetime-prediction
+**[7]** Kaggle. *Remaining Useful Lifetime Prediction.* Available: https://www.kaggle.com/code/sasakitetsuya/remaining-useful-lifetime-prediction
+
+<a id="ref-8"></a> 
+
+**[8]** NASA. *CMAPSS Jet Engine Simulated Data.* Available: https://data.nasa.gov/dataset/cmapss-jet-engine-simulated-data
+
+<a id="ref-9"></a> 
+
+**[9]** NASA. *Prognostics Center of Excellence Data Set Repository.* Available: https://www.nasa.gov/intelligent-systems-division/discovery-and-systems-health/pcoe/pcoe-data-set-repository/
+
+<a id="ref-10"></a> 
+
+**[10]** Behrad Babaeian. *NASA CMAPSS Dataset.* Kaggle. Available: https://www.kaggle.com/datasets/behrad3d/nasa-cmaps
